@@ -1,4 +1,3 @@
-
 <template name="PFIndCurrent">
       <article>    
         <!-- Header -->
@@ -13,31 +12,93 @@
         
         <!-- Section 1 -->
         <section class="section background-white">
-            <div class="line margin-bottom-minus">
-  
-            <div class="s-12 m-12 l-5 center">
-              <h3 class="text-size-30 margin-bottom-40 text-center margin-top-minus "><b>Individual Competitive History</b></h3>
-              <form class="customform text-grey" method="post" enctype="multipart/form-data">
-                <div class="line">
-                  <div class="margin">
-                    <div class="s-12">
-                      <input name="Competitor First Name" class="name" placeholder="Competitor First Name" title="Competitor First Name" id = "FirstName" type="text" />
-                    </div>
-                    <div class="s-12">
-                      <input name="Competitor Last Name" class="name" placeholder="Competitor Last Name" title="Competitor Last Name" id = "LastName" type="text" />
+          <div class="line margin-bottom-minus">
+          <div class="s-12 m-12 l-5 center">
+            <h3 class="margin-top-minusing text-size-30 margin-bottom-40 text-center margin-top-minus "><b>2019-2020 Individual Competitive History</b></h3>
+            <form class="customform text-grey" method="post" enctype="multipart/form-data" onSubmit="return false;">
+              <div class="line">
+                <div class="margin">
+                  <div class="s-12">
+                    <div class = "autocomplete">
+                     <input autocomplete = "off" id="myInput5" name="Competitor's Full Name" class="name" placeholder="Competitor's Full Name" title="Competitor's Full Name" type="text" />
                     </div>
                   </div>
                 </div>
-  
-                  <div class="s-12 "><button class="button border-radius text-white background-primary" type="submit">Submit</button></div>
-                
-              </form>
-            </div>
-             
-            </div>
-          </section>
+              </div>
+              <div class="s-12 "> <a href="#low"><button class="button border-radius text-white background-primary" type="button">Submit</button></a></div>
+            </form>
+          </div>
+        </div>
+       </section>
       </article>
-      
+      {{#if checkLoading}}
+      {{#if checkIfSubmitted}}
+      {{#if checkAvail}}
+      <hr class="break">
+      <section>
+          <h3 class= "margin-left-30 centerln text-dark text-size-30 text-m-size-40"><b> {{getOverallPFIndCurrent.[0]}} Performance Statistics</b></h3> 
+          <div class = "spacing1">
+            <h4 class = "margin-left-30 text-size-20 text-m-size-30">W-L: {{getOverallPFIndCurrent.[3]}}% ({{getOverallPFIndCurrent.[1]}}-{{getOverallPFIndCurrent.[2]}}) </h4>
+            <br>
+            <h4 class = "margin-left-30 text-size-20 text-m-size-30">Prelim Win Percentage: {{getOverallPFIndCurrent.[6]}}% ({{getOverallPFIndCurrent.[4]}}-{{getOverallPFIndCurrent.[5]}})</h4>
+            <br>
+            <h4 class = "margin-left-30 text-size-20 text-m-size-30">Outround Win Percentage: {{getOverallPFIndCurrent.[9]}}% ({{getOverallPFIndCurrent.[7]}}-{{getOverallPFIndCurrent.[8]}})</h4>
+            <br>
+            <h4 class = "margin-left-30 text-size-20 text-m-size-30">Break Percentage: {{getOverallPFIndCurrent.[12]}}% ({{getOverallPFIndCurrent.[10]}}-{{getOverallPFIndCurrent.[11]}})</h4>
+            <br>
+            <h4 class = "margin-left-30 text-size-20 text-m-size-30">Gold Bids: {{getOverallPFIndCurrent.[13]}}</h4>
+            <br>
+            <h4 class = "margin-left-30 text-size-20 text-m-size-30">Ghost Bids: {{getOverallPFIndCurrent.[14]}}</h4>
+            <br>
+            <h4 class = "margin-left-30 text-size-20 text-m-size-30">Silver Bids: {{getOverallPFIndCurrent.[15]}}</h4>
+            <br>
+          </div>
+              {{#each getTournPFIndCurrent}}
+              <div class = "margin-left-50">
+                 <div class = "spacing2">
+                  <h4 class = "linkcolor margin-left-50 text-size-20 text-m-size-30"><u><a href = "{{this.[2]}}" class = "linkcolor" target="_blank">{{this.[0]}}</a></u></h4>
+                  <h4 class = "margin-left-50 text-size-20 text-m-size-30"> Partner: {{this.[1]}}</h4>
+                  {{#if this.[9]}} <!-- whether you break or not-->
+                  <h4 class = "margin-left-50 text-size-20 text-m-size-30"> Prelim Record: {{this.[3]}}-{{this.[4]}}  </h4>
+                  <h4 class = "margin-left-50 text-size-20 text-m-size-30"> Outround Record: {{this.[5]}}-{{this.[6]}}</h4>
+                    {{#if this.[10]}} <!-- whether you bid or not-->
+                      {{#if this.[11]}}
+                        {{#if this.[12]}}
+                        <h4 class = "margin-left-50 text-size-20 text-m-size-30"> Result: {{this.[8]}}</h4>
+                        {{else}}
+                          <h4 class = "margin-left-50 text-size-20 text-m-size-30"> Elimination Round: {{this.[8]}}</h4>
+                        {{/if}}
+                      {{else}}
+                      <h4 class = "margin-left-50 text-size-20 text-m-size-30"> Bid: {{this.[7]}}</h4>
+                      {{#if this.[12]}}
+                        <h4 class = "margin-left-50 text-size-20 text-m-size-30"> Result: {{this.[8]}}</h4>
+                        {{else}}
+                          <h4 class = "margin-left-50 text-size-20 text-m-size-30"> Elimination Round: {{this.[8]}}</h4>
+                        {{/if}}
+                    {{/if}}
+                    {{else}}
+                      {{#if this.[11]}}
+                      <h4 class = "margin-left-50 text-size-20 text-m-size-30"> Elimination Round: {{this.[8]}}</h4>
+                      {{else}}
+                        <h4 class = "margin-left-50 text-size-20 text-m-size-30"> Elimination Round: {{this.[8]}} (No Bid)</h4>
+                      {{/if}}
+                    {{/if}}
+                  {{else}}
+                  <h4 class = "margin-left-50 text-size-20 text-m-size-30"> Prelim Record: {{this.[3]}}-{{this.[4]}}</h4>
+                  <h4 class = "margin-left-50 text-size-20 text-m-size-30">Eliminated in Prelims</h4>
+                  {{/if}}
+                  </div>
+              </div>
+            {{/each}}
+          </section>
+          {{else}}
+       <hr class="break">
+        <h4 class = "centerln paddingtopp bigboyfont"><b>There is no record of this partnership in Tabroom's Public Forum Tournaments.<br>Names may be misspelled or this is a new partnership. </b></h4>>
+        {{/if}}
+          {{else}}
+          <img id = "low" class="ic4 center" src="/images/loading.gif" alt="">
+          {{/if}}
+          {{/if}}
       <hr class="break">
       <!-- Section 4 -->
       <section class=" background-white text-center margin-bottom-40">
@@ -48,8 +109,122 @@
         </div>            
         <div class="line">  
           <div class="s-12 m-12 l-3 center">
-            <a href="contact.html" class="s-12 button border-radius background-primary text-size-20 text-white">Let Us Know</a>
+            <a href="\contact" class="s-12 button border-radius background-primary text-size-20 text-white">Let Us Know</a>
           </div>
         </div>
-        </section>
+      </section>
+        <script>
+          function autocomplete(inp, arr) {
+            /*the autocomplete function takes two arguments,
+            the text field element and an array of possible autocompleted values:*/
+            var currentFocus;
+            /*execute a function when someone writes in the text field:*/
+            inp.addEventListener("input", function(e) {
+                var a, b, i, val = this.value;
+                var max = 0;
+                /*close any already open lists of autocompleted values*/
+                closeAllLists();
+                if (!val) { return false;}
+                currentFocus = -1;
+                /*create a DIV element that will contain the items (values):*/
+                a = document.createElement("DIV");
+                a.setAttribute("id", this.id + "autocomplete-list");
+                a.setAttribute("class", "autocomplete-items");
+                /*append the DIV element as a child of the autocomplete container:*/
+                this.parentNode.appendChild(a);
+                /*for each item in the array...*/
+                for (i = 0; i < arr.length; i++) {
+                  /*check if the item starts with the same letters as the text field value:*/
+                  if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase() && max<6) {
+                    max++;
+                    /*create a DIV element for each matching element:*/
+                    b = document.createElement("DIV");
+                    /*make the matching letters bold:*/
+                    b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+                    b.innerHTML += arr[i].substr(val.length);
+                    /*insert a input field that will hold the current array item's value:*/
+                    b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+                    /*execute a function when someone clicks on the item value (DIV element):*/
+                    b.addEventListener("click", function(e) {
+                        /*insert the value for the autocomplete text field:*/
+                        inp.value = this.getElementsByTagName("input")[0].value;
+                        /*close the list of autocompleted values,
+                        (or any other open lists of autocompleted values:*/
+                        closeAllLists();
+                    });
+                    a.appendChild(b);
+                  }
+                }
+            });
+            /*execute a function presses a key on the keyboard:*/
+            inp.addEventListener("keydown", function(e) {
+                var x = document.getElementById(this.id + "autocomplete-list");
+                if (x) x = x.getElementsByTagName("div");
+                if (e.keyCode == 40) {
+                  /*If the arrow DOWN key is pressed,
+                  increase the currentFocus variable:*/
+                  currentFocus++;
+                  /*and and make the current item more visible:*/
+                  addActive(x);
+                } else if (e.keyCode == 38) { //up
+                  /*If the arrow UP key is pressed,
+                  decrease the currentFocus variable:*/
+                  currentFocus--;
+                  /*and and make the current item more visible:*/
+                  addActive(x);
+                } else if (e.keyCode == 13) {
+                  /*If the ENTER key is pressed, prevent the form from being submitted,*/
+                  e.preventDefault();
+                  if (currentFocus > -1) {
+                    /*and simulate a click on the "active" item:*/
+                    if (x) x[currentFocus].click();
+                  }
+                }
+            });
+            function addActive(x) {
+              /*a function to classify an item as "active":*/
+              if (!x) return false;
+              /*start by removing the "active" class on all items:*/
+              removeActive(x);
+              if (currentFocus >= x.length) currentFocus = 0;
+              if (currentFocus < 0) currentFocus = (x.length - 1);
+              /*add class "autocomplete-active":*/
+              x[currentFocus].classList.add("autocomplete-active");
+            }
+            function removeActive(x) {
+              /*a function to remove the "active" class from all autocomplete items:*/
+              for (var i = 0; i < x.length; i++) {
+                x[i].classList.remove("autocomplete-active");
+              }
+            }
+            function closeAllLists(elmnt) {
+              /*close all autocomplete lists in the document,
+              except the one passed as an argument:*/
+              var x = document.getElementsByClassName("autocomplete-items");
+              for (var i = 0; i < x.length; i++) {
+                if (elmnt != x[i] && elmnt != inp) {
+                  x[i].parentNode.removeChild(x[i]);
+                }
+              }
+            }
+            /*execute a function when someone clicks in the document:*/
+            document.addEventListener("click", function (e) {
+                closeAllLists(e.target);
+            });
+          }
+          /*An array containing all the country names in the world:*/
+        
+
+          var names;
+
+          Meteor.call('curIndividualArray', 
+          (err, res) => {
+            names = res;
+            console.log('GOING TO PRINT ');
+            console.log(names);
+            autocomplete(document.getElementById("myInput5"), names);
+          })
+      
+          /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
+                    </script>
       </template>

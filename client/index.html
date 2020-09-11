@@ -1,196 +1,172 @@
-<template name="MainLayout">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TheDebateWatch</title>
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/icons.css">
-    <link rel="stylesheet" href="css/responsee.css">
-    <link rel="stylesheet" href="owl-carousel/owl.carousel.css">
-    <link rel="stylesheet" href="owl-carousel/owl.theme.css">
-    <link rel="stylesheet" href="css/lightcase.css">
-    <!-- CUSTOM STYLE -->      
-    <link rel="stylesheet" href="css/template-style.css">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,700,900&amp;subset=latin-ext" rel="stylesheet"> 
-    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
-    <script type="text/javascript" src="js/jquery-ui.min.js"></script>   
-  </head>
-
-  <body class="size-1280">
-    <!-- HEADER -->
-    <header role="banner" class="position-absolute">    
-      <!-- Top Navigation -->
-      <nav class="background-transparent background-primary-dott full-width sticky">          
-        <div class="top-nav"> 
-          <!-- mobile version logo -->              
-          <div class="logo hide-l hide-xl hide-xxl">
-              <a href="index.html" class="logo">
-              <!-- Logo White Version -->
-              <img class="logo-white" src="/images/logo.png" alt="">
-              <!-- Logo Dark Version -->
-              <img class="logo-dark" src="/images/darkLogo.png" alt="">
-            </a>
-          </div>                  
-          <p class="nav-text"></p>
-          
-          <!-- left menu items -->
-          <div class="top-nav left-menu">
-            <ul class="right top-ul chevron">
-               <li><a href="index.html">Home</a></li>
-               <li><a href="#" class = "dropbtn">Public Forum</a>
-                 <ul class="dropdown-content">
-                   <li><a href = "#">2019-2020</a>
-                       <ul class="dropdown-content">
-                         <li><a href = "pfIndCurrent.html">Individual Records</a></li>
-                         <li><a href = "publicForum.html">Team Records</a></li>
-                       </ul>
-                   </li>
-                   <li><a href = "#">Past Years</a>
-                       <ul class="dropdown-content">
-                         <li><a href = "pfIndPast.html">Individual Records</a></li>
-                         <li><a href = "pfTeamPast.html">Team Records</a></li>
-                       </ul>
-                   </li>
-                </ul>
-              </li>
-            </ul>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TheDebateWatch</title>
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/icons.css">
+  <link rel="stylesheet" href="css/responsee.css">
+  <link rel="stylesheet" href="owl-carousel/owl.carousel.css">
+  <link rel="stylesheet" href="owl-carousel/owl.theme.css">
+  <link rel="stylesheet" href="css/lightcase.css">
+  <!-- CUSTOM STYLE -->
+  <link rel="stylesheet" href="css/template-style.css">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,700,900&amp;subset=latin-ext" rel="stylesheet">
+  <link rel="icon" href="/favicon.ico?v=2">
+</head>
+<template name="MainLayout">
+  
+    <body class="size-1280">
+      <!-- HEADER -->
+      <header role="banner" class="position-absolute">    
+        <!-- Top Navigation -->
+        <nav class="sticky background-transparent background-primary-dott full-width">          
+          <div class="top-nav"> 
+            <!-- mobile version logo -->           
+            <p class="nav-text"></p>   
+            <div class="logo hide-l hide-xl hide-xxl">
+                <a href="/" class="logo">
+                <!-- Logo White Version -->
+                <img class="logo-white" src="/images/logo.png" alt="">
+                <!-- Logo Dark Version -->
+                <img class="logo-dark" src="/images/darkLogo.png" alt="">
+              </a>
+            </div>                  
+            <!-- left menu items -->
+            <div class="top-nav left-menu">
+              <ul id = "menu" class="right top-ul chevron">
+                 <li><a href="/">Home</a></li>
+                 <li><a href="#" class = "padding-top-top dropbtn">Public Forum</a>
+                   <ul class="dropdown-content1">
+                     <li><a href = "#">2019-2020</a>
+                         <ul class="dropdown-content">
+                           <li><a href = "pfIndividualCurrent">Individual Records</a></li>
+                           <li><a href = "pfTeamCurrent">Team Records</a></li>
+                         </ul>
+                     </li>
+                     <li><a href = "#">Past Years</a>
+                         <ul class="dropdown-content2">
+                           <li><a href = "pfIndividualPast">Individual Records</a></li>
+                           <li><a href = "pfTeamPast">Team Records</a></li>
+                         </ul>
+                     </li>
+                  </ul>
+                </li>
+              </ul>
+           </div>
+           <!-- logo -->
+           <ul id = "menu" class="right logo-menu">
+             <a href="/" class="logo">
+               <!-- Logo White Version -->
+               <img class="logo-white" src="/images/darkLogo.png" alt="">
+               <!-- Logo Dark Version -->
+               <img class="logo-dark" src="/images/logo.png" alt="">
+             </a>
+           </ul>
+           <!-- right menu items -->
+           <div  class="top-nav right-menu">
+              <ul class="top-ul chevron">
+  
+                 <li><a href="lincolnDouglas">Lincoln Douglas</a>
+                </li>
+                 <li><a href="contact">Contact Us</a></li>
+              </ul>
+           </div>
          </div>
-
-         <!-- logo -->
-         <ul class="logo-menu">
-           <a href="index.html" class="logo">
-             <!-- Logo White Version -->
-             <img class="logo-white" src="/images/darkLogo.png" alt="">
-             <!-- Logo Dark Version -->
-             <img class="logo-dark" src="/images/logo.png" alt="">
-           </a>
-         </ul>
-
-         <!-- right menu items -->
-         <div  class="top-nav right-menu">
-            <ul class="top-ul chevron">
-
-               <li><a href="lincolnDouglas.html">Lincoln Douglas</a>
-                </ul>
-              </li>
-               <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-         </div>
-       </div>
-     </nav>
-   </header>
-    
-    <!-- MAIN -->
-    <main role="main">    
-        {{> Template.dynamic template=main}}
-    </main>
-    
-    
-  <!-- FOOTER -->
-  <footer>
-    <!-- Social -->
-    <div class="background-primary padding text-center">
-      <a href="mailto:knujra1@gmail.com"><i class="icon-google_plus_circle text-size-25 text-dark"></i></a>                                                                       
-    </div>
-    <!-- Main Footer -->
-    <section class="section background-dark">
-      <div class="line"> 
-        <div class="margin2x">
-          <div class="xl-5">
-              <h4 class="text-white text-strong">Our Purpose</h4>
-              <p>
-                <b class="text-size-20 less-bottom"></b><b class="text-size-20 less-bottom"></b>Making national tournament records for high school debaters more accessible
-              </p>
+       </nav>
+     </header>
+      <!-- MAIN -->
+      <main role="main">    
+          {{> Template.dynamic template=main}}
+      </main>
+    <!-- FOOTER -->
+    <footer>
+      <!-- Social -->
+      <div class="background-primary padding text-center">
+        <a href="mailto:theDebateWatch@gmail.com"> <img src= "/images/gplus.png" class="center ic2 margin-top-bottom-m10"></a>                                                                  
+      </div>
+      <!-- Main Footer -->
+      <section class=" section background-dark">
+        <div class = "margin-less-less-top margin-left-60 paddingbotomm"> 
+          <div>
+            <div class="xl-5">
+                <h4 class="text-white text-strong">Our Purpose</h4>
+                <p>
+                  <b class="text-size-20 less-bottom"></b><b class="text-size-20 less-bottom"></b>Making national tournament records for high school debaters more accessible
+                </p>
+            </div>
+            <div class="s-12 m-6 l-3 xl-2">
+                <h4 class="text-white text-strong margin-m-top-30"></h4>
+                <a class="text-primary-hover" href="page.html"></a><br>      
+                <a class="text-primary-hover" href="contact.html"></a><br>
+                <a class="text-primary-hover less-bottom" href="blog.html"></a>
+            </div>
+            <div class="s-12 m-6 l-3 xl-2">
+                <h4 class="text-white text-strong margin-m-top-30 "></h4>
+                <a class="text-primary-hover" href="page.html"></a><br>
+                <a class="text-primary-hover" href="page.html"></a><br>
+                <a class="text-primary-hover less-bottom" href="page.html"></a>
+            </div>
+            <div class="s-12 m-6 l-3 xl-3">
+                <h4 class="text-white text-strong margin-m-top-30">Contact Us</h4>
+                <a class="text-primary-hover" href="mailto:knujra1@gmail.com"><img src= "/images/mail2.png" class=" ic3">knujra1@gmail.com</a><br>
+                <a class="text-primary-hover less-bottom" href="mailto:wadhwaaman1013@gmail.com"><img src= "/images/mail2.png" class=" ic3">wadhwaaman1013@gmail.com</a>
+            </div>
+          </div>  
+        </div>    
+      </section>
+      <div class="background-dark">
+          <div class="line">
+            <hr class="break margin-top-bottom-0" style="border-color: #777;">
           </div>
-          <div class="s-12 m-6 l-3 xl-2">
-              <h4 class="text-white text-strong margin-m-top-30"></h4>
-              <a class="text-primary-hover" href="page.html"></a><br>      
-              <a class="text-primary-hover" href="contact.html"></a><br>
-              <a class="text-primary-hover less-bottom" href="blog.html"></a>
+      </div>
+      <!-- Bottom Footer -->
+      <section class="padding-2x background-dark full-width">
+        <div class="line">
+          <div class="s-12 l-6">
+            <p class="text-size-12">Copyright 2020, TheDebateWatch</p>
           </div>
-          <div class="s-12 m-6 l-3 xl-2">
-              <h4 class="text-white text-strong margin-m-top-30 "></h4>
-              <a class="text-primary-hover" href="page.html"></a><br>
-              <a class="text-primary-hover" href="page.html"></a><br>
-              <a class="text-primary-hover less-bottom" href="page.html"></a>
-          </div>
-          <div class="s-12 m-6 l-3 xl-3">
-              <h4 class="text-white text-strong margin-m-top-30">Contact Us</h4>
-              <a class="text-primary-hover" href="mailto:knujra1@gmail.com"><i class="icon-sli-mouse text-primary"></i> knujra1@gmail.com</a><br>
-              <a class="text-primary-hover less-bottom" href="mailto:wadhwaaman1013@gmail.com"><i class="icon-sli-mouse text-primary"></i> wadhwaaman1013@gmail.com</a>
+          <div class="s-12 l-6 rightln">
+            <a class="text-size-12 rightln">Design and coding by<b> Aman Wadhwa and Arjun Khanna</b><br> Originally Created by Tarun Trivedi, Ritvik Chandrashekhar, Varun Sarabudla, and Sid Inta</a>
           </div>
         </div>  
-      </div>    
-    </section>
-    <div class="background-dark">
-        <div class="line">
-          <hr class="break margin-top-bottom-0" style="border-color: #777;">
-        </div>
-    </div>
-    <!-- Bottom Footer -->
-    <section class="padding-2x background-dark full-width">
-      <div class="line">
-        <div class="s-12 l-6">
-          <p class="text-size-12">Copyright 2019, TheDebateWatch</p>
-        </div>
-        <div class="s-12 l-6">
-          <a class="right text-size-12 text-primary-hover" href="http://www.myresponsee.com" title="Responsee - lightweight responsive framework">Design and coding<br> by Aman Wadhwa and Arjun Khanna</a>
-        </div>
-      </div>  
-    </section>
-  </footer>
-  <script type="text/javascript" src="js/responsee.js"></script>
-  <script type="text/javascript" src="owl-carousel/owl.carousel.js"></script>
-  <script type="text/javascript" src="js/template-scripts.js"></script> 
-</body>
-</template>
-
-<template name="Home">
-  <!-- Header -->
-  <header class="section-top-padding background-image text-center" style="background-image:url(/images/debate3.jpg)">
-    <h1 class="text-extra-thin text-white text-s-size-30 text-m-size-40 text-size-50 text-line-height-1 margin-bottom-40 margin-top-130">
-      The DebateWatch
-    </h1>
-    <p class="text-white">An efficient way to check competitive history on teams in the national Public Forum or Lincoln Douglas circuit</p>
-    <img class="slow text-white margin-top-20 text-size-16" src= "/images/arrow-object-white.svg" >
-    <!-- Image -->
-    
-    
-    <!-- dark full width arrow object -->
-    
-  </header>
+      </section>
+    </footer>
+  </body>
+  </template>
   
-  <!-- Section 1 -->
-    <section class="section background-white">
-      <div class="line text-center">
-       
-        <h2 class="text-dark text-size-50 text-m-size-40">What is <b>DebateWatch?</b></h2>
-        <hr class="break background-primary break-small break-center margin-bottom-50">
-      </div>
-      <div class="line">
-        <div class="margin2x">
-          <div class="m-12 l-6 margin-m-bottom-30">
-            <img src="/images/img-01.jpg" alt="">
-          </div>          
-          <div class="m-12 l-6">
-            <h3 class="animated-element text-strong text-size-20 text-line-height-1 margin-bottom-20">What We Do?</h3>
-            <p class="animated-element slow margin-bottom-30">DebateWatch is a website designed to make national tournament records for 
-    high school debaters more accessible. Created by a few students at Bridgewater-Raritan High School, the website was born out of what we 
-    felt was an essential need for the debate community that had not yet been filled. 
-    The backend is programmed in Python, featuring DebateWatch’s proprietary algorithm, which enables us to scrape locally stored tournament data and 
-    bring it to users' fingertips within seconds. The algorithm itself efficiently analyzes tabroom.com, 
-    a website that stores raw data for debaters. It is able to output all necessary information about a singular debater or partnership, 
-    acting as a hub of historical records.
-
-
-            </p>
-                          
-            <h3 class="animated-element text-strong text-size-20 text-line-height-1 margin-bottom-20">History</h3>
-            <p class="animated-element slow margin-bottom-30">In just a few months since our release last year, DebateWatch welcomed was visited by over
-    20,000 visitors in just one month. Throughout the course of the debate season, the website recieved over 80,000 hits.
-            </p>
-          </div>
-        </div>    
-      </div>  
-    </section>
-</template>
+  <template name="Home">
+    <!-- Header -->
+    <header class="section-top-padding background-image text-center" style="background-image:url(/images/debate3.jpg)">
+      <h1 class="text-extra-thin text-white text-s-size-30 text-m-size-40 text-size-50 text-line-height-1 margin-bottom-40 margin-top-130">
+        The DebateWatch
+      </h1>
+      <p class="text-white">An efficient way to check competitive history for teams in the national Public Forum or Lincoln Douglas circuit</p>
+      <a href="#middle"> <img src= "/images/caretDown.png" class="center nav2"></a>
+      <!-- Image -->
+      <!-- dark full width arrow object -->
+    </header>
+    <!-- Section 1 -->
+      <section class="section background-white">
+        <div id = "middle" class="line text-center">
+          <h2 class="text-dark text-size-50 text-m-size-40">What is <b>DebateWatch?</b></h2>
+          <hr class="break background-primary break-small break-center margin-bottom-50">
+        </div>
+        <div class="line">
+          <div class="margin2x">
+            <div class="m-12 l-6 margin-m-bottom-30">
+              <img src="/images/blackreplacement.jpg" alt="">
+            </div>          
+            <div class="m-12 l-6">
+              <h3 class="animated-element text-strong text-size-20 text-line-height-1 margin-bottom-20">What We Do?</h3>
+              <p class="animated-element slow margin-bottom-30">DebateWatch is a website designed to make national tournament records for high school debaters more accessible. Recently updated by two students at Bridgewater-Raritan High School, the website was born out of what we felt was an essential need for the debate community that had not yet been filled. The backend is programmed in JavaScript, featuring DebateWatch’s proprietary algorithm, which enables us to parse through thousands of tournament records and bring detailed information to users' fingertips within seconds. The algorithm itself efficiently accesses our own derived databases and is able to output all necessary information about a singular debater or partnership,  acting as a hub of historical records.
+              </p>
+                            
+              <h3 class="animated-element text-strong text-size-20 text-line-height-1 margin-bottom-20">History</h3>
+              <p class="animated-element slow margin-bottom-30">In just a few months since our release last year, DebateWatch welcomed was visited by over
+      15,000 visitors in just one month. Throughout the course of the debate season, the website recieved over 90,000 hits.
+              </p>
+            </div>
+          </div>    
+        </div>  
+      </section>
+  </template>

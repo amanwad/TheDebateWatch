@@ -1,0 +1,7 @@
+{
+    "galaxy.meteor.com": {
+       "env": {
+         "MONGO_URL": "mongodb+srv://debateadmin:debate123@debatewatch.0qc1l.mongodb.net/meteor?retryWrites=true&w=majority"
+       }
+     }
+  }
